@@ -1,0 +1,64 @@
+/* WORD GAME  */ 
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class HelloWorld : MonoBehaviour
+{
+    int max;
+    int min;
+    int guess;
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        max = 1000;
+        min = 1;
+        guess = 500;
+        Debug.Log("欢迎来到猜数字测试");
+        Debug.Log("在你的心理默念一个数字");
+        Debug.Log("为了让时间更短一些，你想的数字务必在" + min + "和" + max + "之间");
+        Debug.Log("如果这里提供的数字低于你想的数字，请按十字键盘的上");
+        Debug.Log("如果这里提供的数字高于你想的数字，请按十字键盘的下");
+        Debug.Log("如果这里提供的数字就是你想的数字，请按回车键");
+        max = max + 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            min = guess;
+            NextGuess();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            max = guess;
+            NextGuess();
+           
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("哈哈哈哈！  成功！");
+            StartGame();
+        }
+    }
+
+
+    void NextGuess()
+    {
+        guess = (max + min) / 2;
+        Debug.Log("你想的是不是：" + guess);
+    }
+
+
+
+
+}
