@@ -1,0 +1,16 @@
+/* 通过代码写出SceneLoader方法，调用该方法可以从当前Scene跳到下一个Scene */
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneLoader : MonoBehaviour
+{
+    public void LoadNextScene()
+    {
+    
+    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    SceneManager.LoadScene(currentSceneIndex + 1);
+
+    }
+}
