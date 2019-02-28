@@ -1,5 +1,5 @@
 /* WORD GAME  */ 
-
+/* 通过Debug.Log 测试输出和代码，这是一个简单的文字游戏 */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
